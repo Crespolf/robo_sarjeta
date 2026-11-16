@@ -13,6 +13,7 @@ void setup()
 
   iniciarMotores();
   iniciarSensores();
+  bluetoothSetup();
 
 }
 

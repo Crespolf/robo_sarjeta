@@ -9,7 +9,7 @@
 
 
 void bluetoothSetup();
-void bluetoothLoop();
+void bluetoothLoop(bool &roboAtivo);
 
 
 #endif

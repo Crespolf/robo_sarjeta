@@ -15,15 +15,12 @@
 #define ENB (27)
 
 //Sensores
-#define NUM_SENSORES (2)
 #define SENSOR_FRENTE (34)
 #define SENSOR_TRAS (35)
 
 #define DISTANCIA 2000  //mudarpara ajustar a distancia da parede
 
 //Led
-
-
 
 
 #endif

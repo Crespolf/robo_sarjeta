@@ -18,10 +18,10 @@ void bluetoothLoop(bool &roboAtivo) {
     char comando = NuSerial.read();
     if (comando == '2') {
       roboAtivo = true;
-      NuSerial.println("Robo INICIADO");
+      NuSerial.println("Ligado");
     } else if (comando == '1') {
       roboAtivo = false;
-      NuSerial.println("Robo PARADO");
+      NuSerial.println("Desligado");
     }
   }
 }
