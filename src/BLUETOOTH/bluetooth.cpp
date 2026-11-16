@@ -12,3 +12,16 @@ void bluetoothSetup() {
   NimBLEDevice::getAdvertising()->setName(DEVICE_NAME); // mostra bluetooth
   NuSerial.begin(115200); // inicialza serial bluetooth na velocidade (X)
 }
+
+void bluetoothLoop(bool &roboAtivo) {
+  if (NuSerial.available()) {
+    char comando = NuSerial.read();
+    if (comando == '2') {
+      roboAtivo = true;
+      NuSerial.println("Robo INICIADO");
+    } else if (comando == '1') {
+      roboAtivo = false;
+      NuSerial.println("Robo PARADO");
+    }
+  }
+}

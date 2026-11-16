@@ -3,7 +3,9 @@
 
 #include "MOTORES/motores.hpp"
 #include"PID/pid.hpp"
+#include "BLUETOOTH/bluetooth.hpp"
 
+bool roboAtivo = false;
 
 void setup() 
 {
@@ -14,11 +16,16 @@ void setup()
 
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+void loop() 
+{
+  bluetoothLoop(roboAtivo);
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  if (roboAtivo) {
+    float correcao = calcularPID();
+    controleMotores(VELOCIDADE_BASE - correcao, VELOCIDADE_BASE + correcao);
+  } else {
+    pararMotores();
+  }
+
+  delay(10);
 }
