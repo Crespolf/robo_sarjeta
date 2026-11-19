@@ -7,7 +7,7 @@
 //Motor A
 #define IN1 (19)
 #define IN2 (21)
-#define ENA (13)
+#define ENA (26)
 
 //MotorB
 #define IN3 (5)
